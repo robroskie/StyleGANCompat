@@ -102,7 +102,7 @@ def init_tf(config_dict: dict = None) -> None:
     np_random_seed = cfg["rnd.np_random_seed"]
     if np_random_seed is not None:
         np.random.seed(np_random_seed)
-    tf_random_seed = cfg["rnd.tf_random_seed"]
+    tf.random.set_seed = cfg["rnd.tf_random_seed"]
     if tf_random_seed == "auto":
         tf_random_seed = np.random.randint(1 << 31)
     if tf_random_seed is not None:
